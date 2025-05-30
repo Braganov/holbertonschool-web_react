@@ -1,121 +1,104 @@
-## Ressources
+# TypeScript
 
-**À lire ou à regarder**:
+## Description
+Ce projet est une introduction à TypeScript, un sur-ensemble typé de JavaScript qui se compile en JavaScript pur. Il couvre les concepts fondamentaux de TypeScript à travers une série d'exercices pratiques.
 
-* [TypeScript en 5 minutes](/rltoken/JBobnOShA2LO-xxTJAyKtw "TypeScript en 5 minutes")
-* [Documentation TypeScript](/rltoken/jWy0GemmKgkvZbvp3BoPrw "Documentation TypeScript")
-* [Manipulation du DOM en TypeScript](/rltoken/qr9K-gPTaev_T-iNzRJyVg "Manipulation du DOM en TypeScript")
-* [Types d'Objets en TypeScript](/rltoken/KHeDw9pp8j4jiQLU1tP0EA "Types d'Objets en TypeScript")
-* [Référence TSConfig](/rltoken/NJjLYB-m5iBNZCpzkmdYew "Référence TSConfig")
+## Concepts Couverts
 
-## Objectifs d'Apprentissage
+- Types de base en TypeScript
+- Interfaces et Classes
+- Manipulation du DOM
+- Types génériques
+- Espaces de noms (Namespaces)
+- Fusion de déclarations
+- Espaces de noms ambiants
+- Typage nominal
 
-À la fin de ce projet, vous devriez être capable d'[expliquer à n'importe qui](/rltoken/oMJ6EN2QFDVJtFA6uU4f8Q "expliquer à n'importe qui"), **sans l'aide de Google**:
+## Configuration du Projet
 
-* Les types de base en TypeScript
-* Les interfaces, classes et fonctions
-* Comment travailler avec le DOM et TypeScript
-* Les types génériques
-* Comment utiliser les espaces de noms
-* Comment fusionner les déclarations
-* Comment utiliser un espace de noms ambiant pour importer une bibliothèque externe
-* Le typage nominal de base avec TypeScript
+### Prérequis
+- Node.js (version spécifiée dans .nvmrc : 20.19.2)
+- npm (gestionnaire de paquets Node.js)
 
-## Exigences
+### Outils de Développement
+Les éditeurs autorisés sont :
+- Visual Studio Code
+- vim
+- vi
+- emacs
 
-* Éditeurs autorisés: `vi`, `vim`, `emacs`, `Visual Studio Code`
-* Tous vos fichiers doivent se terminer par une nouvelle ligne
-* Tous vos fichiers seront transpilés sur Ubuntu 18.04
-* Vos scripts TS seront vérifiés avec `jest` (version 24.9.*)
-* Un fichier `README.md` à la racine du dossier du projet est obligatoire
-* Votre code doit utiliser l'extension `ts` lorsque possible
-* Le compilateur TypeScript ne doit montrer aucun avertissement ni erreur lors de la compilation
+### Fichiers de Configuration
+Le projet utilise plusieurs fichiers de configuration :
+- `package.json` : Gestion des dépendances et scripts npm
+- `tsconfig.json` : Configuration du compilateur TypeScript
+- `webpack.config.js` : Configuration de Webpack
+- `.eslintrc.js` : Configuration d'ESLint
+- `.nvmrc` : Spécification de la version Node.js
 
-## Tâches
+## Structure du Projet
 
-### 1. Configuration et Interface Student
+Le projet est divisé en plusieurs tâches progressives :
 
-Copiez les fichiers de configuration suivants dans le répertoire `task_0`: `package.json`, `.eslintrc.js`, `tsconfig.json`, `webpack.config.js`
+### Task 0 : Introduction aux Types de Base
+- Création d'une interface Student
+- Manipulation du DOM avec TypeScript
+- Création d'un tableau d'étudiants
 
-Écrivez votre code dans le fichier `js/main.ts`:
+### Task 1 : Interfaces et Classes
+- Interface Teacher avec propriétés requises et optionnelles
+- Extension d'interface (Directors)
+- Création d'une classe StudentClass avec constructeur typé
 
-* Créez une interface `Student` avec:
-  * `firstName`: string
-  * `lastName`: string
-  * `age`: number
-  * `location`: string
-* Créez 2 étudiants (`student1` et `student2`) et stockez-les dans un tableau `studentsList`
-* Utilisez Vanilla Javascript pour créer un tableau HTML avec les données des étudiants
-* Chaque ligne doit afficher le prénom et la localisation de l'étudiant
+### Task 2 : Types Avancés
+- Interfaces DirectorInterface et TeacherInterface
+- Implémentation des classes Director et Teacher
+- Fonction factory createEmployee
+- Types littéraux et type guards
 
-### 2. Interface Teacher
+### Task 3 : Espaces de Noms Ambiants
+- Création de types et interfaces (RowID, RowElement)
+- Déclarations ambiantes pour crud.js
+- Utilisation de triple-slash directives
 
-Créez un répertoire `task_1` avec les fichiers de configuration: `package.json`, `tsconfig.json`, `webpack.config.js`
+### Task 4 : Namespaces et Fusion de Déclarations
+- Namespace Subjects
+- Classes pour différentes matières (Cpp, Java, React)
+- Fusion de déclarations pour étendre l'interface Teacher
 
-Dans `js/main.ts`:
+### Task 5 : Typage Nominal
+- Interfaces MajorCredits et MinorCredits avec brand property
+- Fonctions pour la gestion des crédits
 
-* Créez une interface `Teacher` avec:
-  * `firstName`: string (uniquement à l'initialisation)
-  * `lastName`: string (uniquement à l'initialisation)
-  * `fullTimeEmployee`: boolean
-  * `yearsOfExperience`: number (optionnel)
-  * `location`: string
-  * Possibilité d'ajouter des attributs dynamiques (comme `contract: boolean`)
+## Scripts Disponibles
 
-### 3. Interface Directors
+```bash
+# Installation des dépendances
+npm install
 
-Créez une interface `Directors` qui étend `Teacher` avec:
-* Attribut obligatoire `numberOfReports: number`
+# Lancement du serveur de développement
+npm run start-dev
 
-### 4. Fonction PrintTeacher
+# Construction du projet
+npm run build
 
-Créez une fonction `printTeacher`:
-* Accepte `firstName` et `lastName`
-* Retourne la première lettre du prénom et le nom complet (ex: "J. Doe")
-* Créez une interface `printTeacherFunction` pour cette fonction
+# Exécution des tests
+npm test
+```
 
-### 5. Classe StudentClass
+## Tests et Validation
+- Les tests sont exécutés avec Jest (version 24.9.*)
+- Le code est validé avec ESLint
+- Le compilateur TypeScript ne doit montrer aucun avertissement
 
-Créez une classe `StudentClass`:
-* Constructeur prend `firstName` et `lastName`
-* Méthode `workOnHomework()` retourne "Currently working"
-* Méthode `displayName()` retourne le prénom
-* Utilisez des interfaces pour le constructeur et la classe
+## Exigences Techniques
+- Tous les fichiers doivent se terminer par une nouvelle ligne
+- Le code doit utiliser l'extension .ts quand possible
+- Le projet est transpilé sur Ubuntu 18.04
+- La compilation ne doit générer aucune erreur ni avertissement
 
-### 6. Interfaces et Classes Advanced
-
-Créez:
-* Interface `DirectorInterface` (3 méthodes)
-* Interface `TeacherInterface` (3 méthodes)
-* Classes `Director` et `Teacher` implémentant ces interfaces
-* Fonction `createEmployee` retournant soit `Director` soit `Teacher`
-
-### 7. String Literal Types
-
-* Fonction `isDirector` (type predicate)
-* Fonction `executeWork` appelant la bonne méthode selon le type d'employé
-
-### 8. Ambient Namespaces
-
-Dans `task_3`:
-* Type `RowID` et interface `RowElement`
-* Fichier ambient pour `crud.js`
-* Utilisation des fonctions CRUD
-
-### 9. Namespace pour Classes
-
-Dans `task_4/js/subjects`:
-* Interface `Teacher` dans namespace `Subjects`
-* Classes pour différents sujets (Cpp, React, Java)
-* Gestion de l'expérience d'enseignement
-
-### 10. Brand Types
-
-Dans `task_5`:
-* Interfaces `MajorCredits` et `MinorCredits`
-* Fonctions pour sommer les crédits
-
-**Exigences pour toutes les tâches:**
-* Pas d'erreurs TypeScript
-* Utilisation maximale du typage
-* Respecter les spécifications exactes
+## Ressources Complémentaires
+- [Documentation TypeScript](https://www.typescriptlang.org/docs/)
+- [TypeScript en 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+- [Manipulation du DOM en TypeScript](https://www.typescriptlang.org/docs/handbook/dom-manipulation.html)
+- [Types d'Objets TypeScript](https://www.typescriptlang.org/docs/handbook/2/objects.html)
+- [Référence TSConfig](https://www.typescriptlang.org/tsconfig)
